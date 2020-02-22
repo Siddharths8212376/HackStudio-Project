@@ -13,6 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
+import Dashboard from './Dashboard';
+
 
 function Copyright() {
   return (
@@ -87,6 +89,7 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          <Link to='/dashboard'>
           <Button
             type="submit"
             fullWidth
@@ -96,6 +99,7 @@ export default function SignIn() {
           >
             Sign In
           </Button>
+          </Link>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">

@@ -6,14 +6,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Landing from './components/Landing';
 import SignIn from './components/SignIn';
+import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
-
+import Reports from './components/Reports';
 const routing = (
     <Router>
         <div>
             <Route exact path='/' component={App}/>
             <Route path='/signup' component={SignUp} />
             <Route path='/login' component={SignIn} />
+            <Route path='/dashboard' component={Dashboard} />
+            <Route path='/analytics' component={Reports} />
         </div>
     </Router>
 )

@@ -81,11 +81,7 @@ const footers = [
   },
   {
     title: 'Features',
-    description: ['Cool stuff', 'Random feature', 'Team feature', 'Developer stuff', 'Another one'],
-  },
-  {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
+    description: ['Easy Outsourcing', 'Wide Talent Pool', 'Gain Expreicence', 'Exposure to Industry'],
   },
   {
     title: 'Legal',
@@ -122,11 +118,10 @@ export default function Pricing() {
       {/* Hero unit */}
       <Container maxWidth="sm" component="main" className={classes.heroContent}>
         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-          Pricing
+          EXP
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Quickly build an effective pricing table for your potential customers with this layout.
-          It&apos;s built with default Material-UI components with little customization.
+          Additional Skill Acquicition programme for students. Here students are given the opportunity to gain real work experience through doing real projects.
         </Typography>
       </Container>
       {/* End hero unit */}
