@@ -10,10 +10,11 @@ import Grid from '@material-ui/core/Grid';
 import StarIcon from '@material-ui/icons/StarBorder';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import { Link } from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -111,9 +112,11 @@ export default function Pricing() {
               Support
             </Link>
           </nav>
+          <Link to="/login">
           <Button href="#" color="primary" variant="outlined" className={classes.link}>
             Login
           </Button>
+          </Link>
         </Toolbar>
       </AppBar>
       {/* Hero unit */}
