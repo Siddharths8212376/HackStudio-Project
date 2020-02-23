@@ -121,7 +121,7 @@ export default function Pricing() {
           EXP
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" component="p">
-          Additional Skill Acquicition programme for students. Here students are given the opportunity to gain real work experience through doing real projects.
+          Additional Skill Acquisition platform for students. Here students are given the opportunity to gain real work experience through doing real projects.
         </Typography>
       </Container>
       {/* End hero unit */}
