@@ -9,13 +9,13 @@ function createData(time, amount) {
 }
 
 const data = [
-  createData('Jan', 155),
-  createData('Mar', 300),
-  createData('May', 600),
-  createData('Jul', 800),
-  createData('Sep', 1600),
-  createData('Nov', 1500),
-  createData('Jan', 2000),
+  createData('Jan', 15),
+  createData('Mar', 30),
+  createData('May', 60),
+  createData('Jul', 80),
+  createData('Sep', 160),
+  createData('Nov', 150),
+  createData('Dec', 200),
 ];
 
 export default function Chart() {

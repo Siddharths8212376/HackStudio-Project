@@ -25,7 +25,7 @@ const featuredPosts = [
     title: 'Ticket-1',
     date: 'Feb 25',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'Project milestone 1 : Initial analysis and research\n Documentation could be improved, code must be optimized as well. GUI not working properly',
     image: 'https://www.medica-tradefair.com/medicacache/pica/2/3/5/6/8/5/240781540314729/icon_ticket.png',
     imageText: 'Image Text',
   },
@@ -33,7 +33,7 @@ const featuredPosts = [
     title: 'Ticket-2',
     date: 'Feb 28',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
+      'Project Milestone 2 : Game Creation and deployment\n Game keeps on crashing, add handlers for events.',
     image: 'https://www.medica-tradefair.com/medicacache/pica/2/3/5/6/8/5/240781540314729/icon_ticket.png',
     imageText: 'Image Text',
   }
@@ -55,7 +55,7 @@ export default function Progression() {
           </Grid>
         </main>
       </Container>
-      <Footer title="75% done!" description="placeholder" />
+      <Footer title="75% done!" description="Keep up the good pace!" />
     </React.Fragment>
   );
 }

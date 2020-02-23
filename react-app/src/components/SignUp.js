@@ -12,8 +12,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Link } from 'react-router-dom';
+import { Link, Router, Route } from 'react-router-dom';
 import { db } from './fire';
+import register from './register';
 
 function Copyright() {
   return (
@@ -156,6 +157,7 @@ class SignUp extends Component{
                 />
               </Grid>
             </Grid>
+
             <Button
               type="submit"
               fullWidth
@@ -166,6 +168,14 @@ class SignUp extends Component{
             >
               Sign Up
             </Button>
+
+            <Grid container justify="flex-end">
+              <Grid item>
+                <Link to='/register'>
+                  Register Now!
+                </Link>
+              </Grid>
+              </Grid>
             <Grid container justify="flex-end">
               <Grid item>
                 <Link to='/login'>
@@ -173,6 +183,7 @@ class SignUp extends Component{
                 </Link>
               </Grid>
             </Grid>
+
           </form>
         </div>
         <Box mt={5}>

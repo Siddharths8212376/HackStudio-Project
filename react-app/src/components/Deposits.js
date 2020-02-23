@@ -18,9 +18,9 @@ const useStyles = makeStyles({
 
 
 const data02 = [
-  { name: 'Positive Reviews', value: 70, color: '#E38627'},
-  { name: 'Negative Reviews', value: 10, color: '#C13C37'},
-  { name: 'Neutral', value: 20, color: '#6A2135' },
+  { name: 'Positive Reviews', value: 70, color: '#0000CC'},
+  { name: 'Negative Reviews', value: 10, color: '#0066CC'},
+  { name: 'Neutral', value: 20, color: '#CCCCCC' },
 
 ];
 

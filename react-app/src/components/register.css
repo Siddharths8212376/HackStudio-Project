@@ -1,0 +1,22 @@
+.fundraiser{
+    width: 500;
+    height: 600;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    background-color: #58ACFA;
+}
+
+.header{
+    font-size: 25px;
+    font-family: 'Roboto';
+    justify-content: center;
+    
+}
+
+.form{
+    background-color: aqua;
+}

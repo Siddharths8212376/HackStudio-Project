@@ -10,6 +10,7 @@ import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import Reports from './components/Reports';
 import Progression from './components/Progression';
+import register from './components/register';
 const routing = (
     <Router>
         <div>
@@ -19,6 +20,7 @@ const routing = (
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/analytics' component={Reports} />
             <Route path='/progress' component={Progression}/>
+            <Route path='/register' component={register} />
         </div>
     </Router>
 )

@@ -33,11 +33,11 @@ function createData(id, allocated, clientID, currentStatus, description, deadlin
 
 // rows.push(createData(1, 'true', '11', 'Open', 'Work Required', '15/05/2018', 'react'));
 const rows = [
-  createData(0, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(1, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(2, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(3, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(4, 'XX', 'XX', 'XX', 'XX', 'XX'),
+  createData(0, 'Going On', '044', 'Going On', 'frontend Dev', '1 month', 'React, JS'),
+  createData(1, 'Not Started', '221', 'Going On', 'game Dev', '2 months', 'Unity'),
+  // createData(2, 'XX', 'XX', 'XX', 'XX', 'XX'),
+  // createData(3, 'XX', 'XX', 'XX', 'XX', 'XX'),
+  // createData(4, 'XX', 'XX', 'XX', 'XX', 'XX'),
 ];
 
 
@@ -94,7 +94,7 @@ class Orders2 extends Component {
       </Table>
       <div className={classes.seeMore}>
         <Link color="primary" href="#" onClick={preventDefault}>
-          See more orders
+          See all projects
         </Link>
       </div>
     </React.Fragment>

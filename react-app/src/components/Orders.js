@@ -33,11 +33,11 @@ function preventDefault(event) {
 }
 
 const rows = [
-  createData(0, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(1, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(2, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(3, 'XX', 'XX', 'XX', 'XX', 'XX'),
-  createData(4, 'XX', 'XX', 'XX', 'XX', 'XX'),
+  createData(0, 'Open', '003', 'ABC', 'backend dev', '2 months', 'Nodejs'),
+  createData(1, 'Funded', '223', 'XYZ', '3d model dev', '2 months', 'Cry Engine'),
+  createData(2, 'Community Project', '021', 'RDO', 'content writing', '2 months', 'creative writing'),
+  createData(3, 'Open', '011', 'ISC', 'Event Photography', '3 months', 'Photography'),
+  createData(4, 'Open', '031', 'MSK', 'Editing', '2 months', 'Video Editing'),
 ];
 
 class Orders extends Component{
@@ -45,26 +45,61 @@ class Orders extends Component{
   constructor(props){
     super(props);
     this.state = {
-      PendingJobs: {
-
-      }
+      data: null,
+      };
+    this.onLoad = this.onLoad.bind(this);
     }
+    
+
+
+  onLoad = (e) => {
+    const docRef = db.collection('PendingJobs').doc('DSLPHxrmqYMnNx16ITD4');
+
+    docRef.get().then((doc) => {
+      if (doc.exists) {
+        let data = doc.data();
+        this.setState({data: data});
+        console.log("document data : ", data);
+      }
+      else{
+        this.setState({data: null});
+        console.log("no such document!");
+      }
+    }).catch(function(error){
+      this.setState({data: null});
+      console.log("error parsing the document..", error);
+    });
   }
+  
+
+
+  
+
+
+
   render(){
 
+    // this.onLoad();
+    // var x = this.state.data;
+    // const rows = createData(0, x.Allocated, x.Client_ID, x.Current_Status, x.Description, x.deadline, x.Student_ID, x.tags);
+    
+    // let rows = this.state.data;
+    console.log("the rows ", rows);
     const classes = makeStyles(theme => ({
       seeMore: {
         marginTop: theme.spacing(3),
       },
     }));
+    
     return (
+      
       <React.Fragment>
         <Title>Recommended Projects</Title>
         <Table size="small">
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
-              <TableCell>Current Status</TableCell>
+              <TableCell>Client Name</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>Time Frame</TableCell>
               <TableCell align="right">Tags</TableCell>
