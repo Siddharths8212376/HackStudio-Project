@@ -9,6 +9,7 @@ import SignIn from './components/SignIn';
 import Dashboard from './components/Dashboard';
 import SignUp from './components/SignUp';
 import Reports from './components/Reports';
+import Progression from './components/Progression';
 const routing = (
     <Router>
         <div>
@@ -17,6 +18,7 @@ const routing = (
             <Route path='/login' component={SignIn} />
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/analytics' component={Reports} />
+            <Route path='/progress' component={Progression}/>
         </div>
     </Router>
 )

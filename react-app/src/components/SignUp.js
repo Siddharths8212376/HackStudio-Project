@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
-import fire from './fire';
+import { db } from './fire';
 
 function Copyright() {
   return (
@@ -40,7 +40,7 @@ class SignUp extends Component{
         password: '',
       },
     };
-
+    
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -50,15 +50,15 @@ class SignUp extends Component{
     const currentState = user;
     const { name, value } = e.target;
     currentState[name] = value;
-
     this.setState( { user: currentState });
   }
   
   onSubmit(e) {
     e.preventDefault();
     console.log(this.state.user);
-    let messageRef = fire.database().ref('Users').orderByKey().limitToLast(100);
-    fire.database().ref('Users').push(this.state.user);
+    // let messageRef = fire.database().ref('Users').orderByKey().limitToLast(100);
+    // fire.database().ref('Users').push(this.state.user);
+    db.collection("Users").doc(this.state.user.email).set(this.state.user);
     this.setState({
       user: {
         email: '',

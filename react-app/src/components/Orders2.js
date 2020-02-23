@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from '@material-ui/core/Link';
+import React, {Component} from 'react';
+// import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,30 +7,66 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
-
+import { db } from './fire';
+import { Link } from 'react-router-dom';
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, allocated, clientID, currentStatus, description, deadline, studentID, tags) {
+  return {id, allocated, clientID, currentStatus, description, deadline, studentID, tags};
 }
 
+// var rows = []
+
+// db.collection("PendingJobs").get()
+//   .then(querySnapshot => {
+//     const data_ = querySnapshot.docs.map(doc => doc.data());
+//     console.log(data_[0]);
+//     console.log(data_[1]);
+//     var x = data_[0];
+//     rows.push(createData(0, x.Allocated, x.Client_ID, x.Current_Status, x.Description, x.deadline, x.Student_ID, x.tags));
+//     x = data_[1];
+//     rows.push(createData(1, x.Allocated, x.Client_ID, x.Current_Status, x.Description, x.deadline, x.Student_ID, x.tags));
+//   }).then(function() {
+//     console.log(rows);
+      
+//   });
+
+
+// rows.push(createData(1, 'true', '11', 'Open', 'Work Required', '15/05/2018', 'react'));
 const rows = [
   createData(0, 'XX', 'XX', 'XX', 'XX', 'XX'),
   createData(1, 'XX', 'XX', 'XX', 'XX', 'XX'),
-
+  createData(2, 'XX', 'XX', 'XX', 'XX', 'XX'),
+  createData(3, 'XX', 'XX', 'XX', 'XX', 'XX'),
+  createData(4, 'XX', 'XX', 'XX', 'XX', 'XX'),
 ];
+
+
+// for( let i = 0 ; i < json[0].length; i += 1){
+
+//   var data = createData(i, ...json[0][i]);
+//   rows.push(data);
+// 
+
 
 function preventDefault(event) {
   event.preventDefault();
 }
 
-const useStyles = makeStyles(theme => ({
-  seeMore: {
-    marginTop: theme.spacing(3),
-  },
-}));
 
-export default function Orders() {
-  const classes = useStyles();
+class Orders2 extends Component {
+  constructor(){
+    super();
+    this.state = {
+      rows: [],
+    }
+  }
+  
+  render() {
+    const classes = makeStyles(theme => ({
+      seeMore: {
+        marginTop: theme.spacing(3),
+      },
+    }));
   return (
     <React.Fragment>
       <Title>Pending Projects</Title>
@@ -38,20 +74,20 @@ export default function Orders() {
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
+            <TableCell>Current Status</TableCell>
             <TableCell>Description</TableCell>
-            <TableCell>Client</TableCell>
             <TableCell>Time Frame</TableCell>
             <TableCell align="right">Tags</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+            <TableRow key={row.allocated}>
+              <TableCell>{row.clientID}</TableCell>
+              <TableCell><Link to='/progress'>{row.currentStatus}</Link></TableCell>
+              <TableCell>{row.description}</TableCell>
+              <TableCell>{row.deadline}</TableCell>
+              <TableCell align="right">{row.studentID}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -63,4 +99,7 @@ export default function Orders() {
       </div>
     </React.Fragment>
   );
+  }
 }
+
+export default Orders2;
